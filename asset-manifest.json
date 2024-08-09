@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/drink-or-dare/static/css/main.9b39ea8e.css",
-    "main.js": "/drink-or-dare/static/js/main.b95d3719.js",
+    "main.css": "/drink-or-dare/static/css/main.4744ec27.css",
+    "main.js": "/drink-or-dare/static/js/main.70a06f36.js",
     "static/js/453.96b4c1e9.chunk.js": "/drink-or-dare/static/js/453.96b4c1e9.chunk.js",
+    "static/media/waves_bg1.png": "/drink-or-dare/static/media/waves_bg1.24e9a011b6fb03a29205.png",
     "index.html": "/drink-or-dare/index.html",
-    "main.9b39ea8e.css.map": "/drink-or-dare/static/css/main.9b39ea8e.css.map",
-    "main.b95d3719.js.map": "/drink-or-dare/static/js/main.b95d3719.js.map",
+    "main.4744ec27.css.map": "/drink-or-dare/static/css/main.4744ec27.css.map",
+    "main.70a06f36.js.map": "/drink-or-dare/static/js/main.70a06f36.js.map",
     "453.96b4c1e9.chunk.js.map": "/drink-or-dare/static/js/453.96b4c1e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b39ea8e.css",
-    "static/js/main.b95d3719.js"
+    "static/css/main.4744ec27.css",
+    "static/js/main.70a06f36.js"
   ]
 }
