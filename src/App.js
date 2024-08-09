@@ -10,10 +10,10 @@ function LoadingScreen(){
 
 function Menu({warningScreenOn}){
   return <div className="w-screen h-20 fixed top-0 left-0 bg-blue-900 flex justify-between items-center px-5">
-    <p className="pacifico-regular text-white text-xl">Drink or Dare</p>
+    <p className="pacifico-regular text-white text-2xl">Drink or Dare</p>
     <div onClick={() => warningScreenOn(true)} className="group flex items-center justify-center w-12 h-12">
-      <div className="bg-white group-active:bg-white/60 absolute rounded-full w-12 h-1 rotate-45"></div>
-      <div className="bg-white group-active:bg-white/60 absolute rounded-full w-12 h-1 rotate-n45"></div>
+      <div className="bg-white group-active:bg-white/60 absolute rounded-full w-10 h-1 rotate-45"></div>
+      <div className="bg-white group-active:bg-white/60 absolute rounded-full w-10 h-1 rotate-n45"></div>
     </div>
   </div>
 }
@@ -21,7 +21,7 @@ function Menu({warningScreenOn}){
 function ViewRules({changeScreen}){
   return <div className="w-screen h-screen flex flex-col gap-5 justify-center items-center">
     <p className="text-blue-900 text-5xl font-bold">Rules</p>
-    <div className="p-8 bg-white rounded-3xl font-medium text-2xl text-center mx-8">It is like truth or dare except there is no dare, instead of a dare the player has to drink a 40ml shot of alcohol.</div>
+    <div className="shadow-2 p-8 bg-white rounded-3xl font-medium text-2xl text-center mx-8">It is like truth or dare except there is no dare, instead of a dare the player has to drink a 40ml shot of alcohol.</div>
     <button onClick={() => changeScreen("ModifyPlayers")} className="w-fit active:bg-green-500/70 bg-green-500 rounded-full py-4 px-6 text-white text-2xl font-medium">Start new Game</button>
   </div>
 }
@@ -29,7 +29,7 @@ function ViewRules({changeScreen}){
 function Drink({current, changeScreen}){
   return <div className="w-screen h-screen flex flex-col gap-5 justify-center items-center">
     <p className="text-blue-900 text-center text-5xl font-bold">{current}</p>
-    <div className="p-8 bg-white rounded-3xl font-medium text-2xl text-center mx-8">Did {current} drink the shot?</div>
+    <div className="shadow-2 p-8 bg-white rounded-3xl font-medium text-2xl text-center mx-8">Did {current} drink the shot?</div>
     <button onClick={() => changeScreen("DrinkOrDare")} className="w-fit active:bg-green-500/70 bg-green-500 rounded-full py-4 px-6 text-white text-2xl font-medium">Yes, continue</button>
   </div>
 }
@@ -37,7 +37,7 @@ function Drink({current, changeScreen}){
 function Dare({current, changeScreen, dare}){
   return <div className="w-screen h-screen flex flex-col gap-5 justify-center items-center">
     <p className="text-blue-900 text-center text-5xl font-bold">{current}</p>
-    <div className="p-8 bg-white rounded-3xl font-medium text-2xl text-center mx-8">{dare}</div>
+    <div className="shadow-2 p-8 bg-white rounded-3xl font-medium text-2xl text-center mx-8">{dare}</div>
     <button onClick={() => changeScreen("DrinkOrDare")} className="w-fit active:bg-green-500/70 bg-green-500 rounded-full py-4 px-6 text-white text-2xl font-medium">Continue</button>
   </div>
 }
@@ -67,14 +67,14 @@ function ModifyPlayers({players = [], addP, removeP, startGame }){
     <p className="text-3xl font-bold text-blue-900">Modify Players</p>
     <div className="flex w-full flex-col gap-2">
       {players.map(el => (
-        <div className="flex">
+        <div className="flex rounded-full shadow-2">
           <input value={el} className="playerInput bg-white text-2xl py-5 px-6 w-full rounded-l-full" type="text" disabled></input>
           <div onClick={ () => removeP(el) } className="flex items-center justify-center w-24 bg-red-500 active:bg-red-600 rounded-r-full">
             <div className="h-1 bg-white rounded-full w-9"></div>
           </div>
         </div>
       ))}
-      <div className="flex">
+      <div className="flex rounded-full shadow-2">
         <input id="playerInput" className="text-2xl py-5 px-6 w-full rounded-l-full" type="text" placeholder="Add player..."></input>
         <div onClick={ () => addP() } className="flex items-center justify-center w-24 bg-blue-900 active:bg-blue-700 rounded-r-full">
           <div className="absolute h-1 bg-white rounded-full w-9"></div>
@@ -172,15 +172,16 @@ function App() {
     }
   }
   let menu = <Menu warningScreenOn={warningScreenOn}/>;
+  let bg = <img className="bg" src={require("./waves_bg1.png")}/>;
   if(!warningOn){
     if(menuOn)
-      return <>{menu}{MainElement}</>;
+      return <>{bg}{menu}{MainElement}</>;
     else
-      return MainElement;
+      return <>{bg}{MainElement}</>;
   }
   else{
     let warningScreen = <WarningScreen message={warningMessage} changeScreen={changeScreen} warningScreenOn={warningScreenOn}/>;
-    return <>{menu}{warningScreen}{MainElement}</>;
+    return <>{bg}{menu}{warningScreen}{MainElement}</>;
   }
 }
 

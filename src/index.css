@@ -21,12 +21,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background:#FBEAEB;
+  background-color:#FBEAEB;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.bg{
+  position:absolute;
+  z-index:-1;
+  width:100vw;
+  height:100vh;
+  object-fit:cover;
+  opacity:0.2;
 }
 
 .pacifico-regular {
@@ -44,4 +53,12 @@ code {
 
 .shadow-1{
   box-shadow:0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.shadow-2{
+  box-shadow:0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-3{
+  box-shadow:0 0 20px rgba(0, 0, 0, 0.1);
 }
